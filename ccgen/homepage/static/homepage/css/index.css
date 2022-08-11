@@ -47,7 +47,7 @@ img {
 
 /* Hero section */
 .hero {
-  background: url("../images/landing-page-hero-bg.svg") no-repeat;
+  background: url("../images/landing-page-hero-bg.webp") no-repeat;
   background-size: cover;
   font-family: "Montserrat", sans-serif;
 
@@ -189,7 +189,7 @@ img {
 }
 
 .faq_header {
-  background: url("../images/faq-bg.svg") no-repeat;
+  background: url("../images/faq-bg.webp") no-repeat;
   background-size: cover;
 
   margin: 1.5em 0;

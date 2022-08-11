@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'documentation.apps.DocumentationConfig',
     'team.apps.TeamConfig',
     'contact.apps.ContactConfig',
+    'library.apps.LibraryConfig',
 ]
 
 MIDDLEWARE = [

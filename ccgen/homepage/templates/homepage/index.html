@@ -20,7 +20,7 @@ href="{% static 'homepage/css/index.css' %}"
     <nav class="nav_menu">
       <ul class="nav_list">
         <li><a class="nav_link" href="#">Features</a></li>
-        <li><a class="nav_link" href="#">Library</a></li>
+        <li><a class="nav_link" href="{% url 'library' %}">Library</a></li>
         <li><a class="nav_link" href="{% url 'our-team' %}">The team</a></li>
         <li><a class="nav_link" href="{% url 'contact-us' %}">Contact us</a></li>
       </ul>
@@ -53,7 +53,7 @@ href="{% static 'homepage/css/index.css' %}"
   <nav id="hamburger-menu" class="ham_menu hide">
     <ul>
       <li><a class="ham_link" href="#">Features</a></li>
-      <li><a class="ham_link" href="#">Library</a></li>
+      <li><a class="ham_link" href="{% url 'library' %}">Library</a></li>
       <li>
         <a class="ham_link" href="{% url 'our-team' %}">The team</a>
       </li>
@@ -80,7 +80,7 @@ href="{% static 'homepage/css/index.css' %}"
           <span>exciting designs!</span>
         </h1>
         <div class="hero_links">
-          <a class="hero_link hero_link-1" href="#">View our library</a>
+          <a class="hero_link hero_link-1" href="{% url 'library' %}">View our library</a>
           <a class="hero_link hero_link-2" href="{% url 'how-it-works' %}">How does it work?</a>
         </div>
       </figcaption>
@@ -101,7 +101,7 @@ href="{% static 'homepage/css/index.css' %}"
           Pick a design from our library and print it out as sticker skin
           for your credit card.
         </p>
-        <a href="#" class="feature_btn">View our library</a>
+        <a href="{% url 'library' %}" class="feature_btn">View our library</a>
       </figcaption>
     </figure>
     <figure class="feature">
@@ -118,7 +118,7 @@ href="{% static 'homepage/css/index.css' %}"
           Want to download the code for a credit card design and tweak it
           for you own project? We got you.
         </p>
-        <a href="#" class="feature_btn"> Download code sample </a>
+        <a href="{% url 'library' %}" class="feature_btn"> Download code sample </a>
       </figcaption>
     </figure>
     <figure class="feature">
@@ -135,7 +135,7 @@ href="{% static 'homepage/css/index.css' %}"
           Once customize a design you like, you can download the design
           files in psd, figma, adobe xd or vector formats and tweak them.
         </p>
-        <a href="#" class="feature_btn"> Download design files </a>
+        <a href="{% url 'library' %}" class="feature_btn"> Download design files </a>
       </figcaption>
     </figure>
     <figure class="feature">
@@ -152,7 +152,7 @@ href="{% static 'homepage/css/index.css' %}"
           Interact with our documentation to see how to go about using our
           website to create your own credit card designs.
         </p>
-        <a href="#" class="feature_btn">Go to documentation</a>
+        <a href="{% url 'how-it-works' %}" class="feature_btn">Go to documentation</a>
       </figcaption>
     </figure>
   </section>
@@ -252,7 +252,7 @@ href="{% static 'homepage/css/index.css' %}"
         <h3 class="footer_heading">Library</h3>
         <ul class="footer_list">
           <li>
-            <a class="footer_link" href="#">View Library</a>
+            <a class="footer_link" href="{% url 'library' %}">View Library</a>
           </li>
           <li>
             <a class="footer_link" href="#">Saved Designs</a>
