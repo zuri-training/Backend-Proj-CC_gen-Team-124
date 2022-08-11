@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'ccgen',
     'homepage.apps.HomepageConfig',
     'authentication.apps.AuthenticationConfig',
+    'documentation.apps.DocumentationConfig',
+    'team.apps.TeamConfig',
+    'contact.apps.ContactConfig',
+    'library.apps.LibraryConfig',
 ]
 
 MIDDLEWARE = [

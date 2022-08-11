@@ -20,18 +20,25 @@ href="{% static 'homepage/css/index.css' %}"
     <nav class="nav_menu">
       <ul class="nav_list">
         <li><a class="nav_link" href="#">Features</a></li>
-        <li><a class="nav_link" href="#">Library</a></li>
-        <li><a class="nav_link" href="#">The team</a></li>
-        <li><a class="nav_link" href="#">Contact us</a></li>
+        <li><a class="nav_link" href="{% url 'library' %}">Library</a></li>
+        <li><a class="nav_link" href="{% url 'our-team' %}">The team</a></li>
+        <li><a class="nav_link" href="{% url 'contact-us' %}">Contact us</a></li>
       </ul>
     </nav>
   </div>
   <div class="nav_right">
     {% if request.user.is_authenticated %}
-    <a class="nav_login">Welcome {{ request.user.username }}</a>
+    <div class="nav_right nav-right_auth">
+      <a href="#" class="nav_login">
+        <img src="{% static 'Icons/Bookmark.svg' %}" alt="bookmark" />
+      </a>
+      <a href="./profile.html" class="nav_register">
+        <img src="{% static 'Icons/profile.svg' %}" alt="profile" />
+      </a>
+    </div>
     <form action="{% url 'logout' %}" method="POST">
        {% csrf_token %}
-      <button class="nav_register" type="submit">Logout</button>
+      <a href="{% url 'logout' %}"><button class="nav_register" type="submit">Logout</button></a>
     </form>
     {% else %}
     <a class="nav_login" href="{% url 'login' %}">Login</a>
@@ -46,15 +53,15 @@ href="{% static 'homepage/css/index.css' %}"
   <nav id="hamburger-menu" class="ham_menu hide">
     <ul>
       <li><a class="ham_link" href="#">Features</a></li>
-      <li><a class="ham_link" href="#">Library</a></li>
+      <li><a class="ham_link" href="{% url 'library' %}">Library</a></li>
       <li>
-        <a class="ham_link" href="#">The team</a>
+        <a class="ham_link" href="{% url 'our-team' %}">The team</a>
       </li>
-      <li><a class="ham_link" href="#">Contact us</a></li>
+      <li><a class="ham_link" href="{% url 'contact-us' %}">Contact us</a></li>
     </ul>
     <div class="ham_btns">
-      <a class="ham_login" href="#">Login</a>
-      <a class="ham_register" href="#">Register</a>
+      <a class="ham_login" href="{% url 'login' %}">Login</a>
+      <a class="ham_register" href="{% url 'register' %}">Register</a>
     </div>
   </nav>
 
@@ -63,7 +70,7 @@ href="{% static 'homepage/css/index.css' %}"
       <div class="hero_img-c">
         <img
           class="hero_img"
-          src="{% static 'homepage/images/credit-cards-hero.svg' %}"
+          src="{% static 'homepage/images/credit-cards-hero.webp' %}"
           alt=""
         />
       </div>
@@ -73,8 +80,8 @@ href="{% static 'homepage/css/index.css' %}"
           <span>exciting designs!</span>
         </h1>
         <div class="hero_links">
-          <a class="hero_link hero_link-1" href="#">View our library</a>
-          <a class="hero_link hero_link-2" href="#">How does it work?</a>
+          <a class="hero_link hero_link-1" href="{% url 'library' %}">View our library</a>
+          <a class="hero_link hero_link-2" href="{% url 'how-it-works' %}">How does it work?</a>
         </div>
       </figcaption>
     </figure>
@@ -84,7 +91,7 @@ href="{% static 'homepage/css/index.css' %}"
       <div class="feature_img-c">
         <img
           class="feature_img"
-          src="{% static 'homepage/images/credit-card-payment-cuate.svg' %}"
+          src="{% static 'homepage/images/credit-card-payment-cuate.webp' %}"
           alt=""
         />
       </div>
@@ -94,14 +101,14 @@ href="{% static 'homepage/css/index.css' %}"
           Pick a design from our library and print it out as sticker skin
           for your credit card.
         </p>
-        <a href="#" class="feature_btn">View our library</a>
+        <a href="{% url 'library' %}" class="feature_btn">View our library</a>
       </figcaption>
     </figure>
     <figure class="feature">
       <div class="feature_img-c">
         <img
           class="feature_img"
-          src="{% static 'homepage/images/code-typing-rafiki.svg' %}"
+          src="{% static 'homepage/images/code-typing-rafiki.webp' %}"
           alt=""
         />
       </div>
@@ -111,14 +118,14 @@ href="{% static 'homepage/css/index.css' %}"
           Want to download the code for a credit card design and tweak it
           for you own project? We got you.
         </p>
-        <a href="#" class="feature_btn"> Download code sample </a>
+        <a href="{% url 'library' %}" class="feature_btn"> Download code sample </a>
       </figcaption>
     </figure>
     <figure class="feature">
       <div class="feature_img-c">
         <img
           class="feature_img"
-          src="{% static 'homepage/images/designer-girl-cuate.svg' %}"
+          src="{% static 'homepage/images/designer-girl-cuate.webp' %}"
           alt=""
         />
       </div>
@@ -128,14 +135,14 @@ href="{% static 'homepage/css/index.css' %}"
           Once customize a design you like, you can download the design
           files in psd, figma, adobe xd or vector formats and tweak them.
         </p>
-        <a href="#" class="feature_btn"> Download design files </a>
+        <a href="{% url 'library' %}" class="feature_btn"> Download design files </a>
       </figcaption>
     </figure>
     <figure class="feature">
       <div class="feature_img-c">
         <img
           class="feature_img"
-          src="{% static 'homepage/images/instruction-manual-rafiki.svg' %}"
+          src="{% static 'homepage/images/instruction-manual-rafiki.webp' %}"
           alt=""
         />
       </div>
@@ -145,16 +152,16 @@ href="{% static 'homepage/css/index.css' %}"
           Interact with our documentation to see how to go about using our
           website to create your own credit card designs.
         </p>
-        <a href="#" class="feature_btn">Go to documentation</a>
+        <a href="{% url 'how-it-works' %}" class="feature_btn">Go to documentation</a>
       </figcaption>
     </figure>
   </section>
   <section class="register">
     <figure class="register_fig">
-      <a href="#"
+      <a href="{% url 'register' %}"
         ><!-- Links to register page -->
         <img
-          src="{% static 'homepage/images/signup-form-img.svg' %}"
+          src="{% static 'homepage/images/signup-form-img.webp' %}"
           alt=""
         />
       </a>
@@ -237,7 +244,7 @@ href="{% static 'homepage/css/index.css' %}"
         <h3 class="footer_heading">Support</h3>
         <ul class="footer_list">
           <li>
-            <a class="footer_link" href="#">Contact us</a>
+            <a class="footer_link" href="{% url 'contact-us' %}">Contact us</a>
           </li>
         </ul>
       </nav>
@@ -245,7 +252,7 @@ href="{% static 'homepage/css/index.css' %}"
         <h3 class="footer_heading">Library</h3>
         <ul class="footer_list">
           <li>
-            <a class="footer_link" href="#">View Library</a>
+            <a class="footer_link" href="{% url 'library' %}">View Library</a>
           </li>
           <li>
             <a class="footer_link" href="#">Saved Designs</a>
@@ -256,7 +263,7 @@ href="{% static 'homepage/css/index.css' %}"
         <h3 class="footer_heading">Company</h3>
         <ul class="footer_list">
           <li>
-            <a class="footer_link" href="#">Meet the Team</a>
+            <a class="footer_link" href="{% url 'our-team' %}">Meet the Team</a>
           </li>
         </ul>
       </nav>

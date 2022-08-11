@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} - Contact Us{% endblock title %}
+{% block styles %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/contactUs.css' %}">
+{% endblock styles %}
+
+{% block content %}
+<header class="nav-div">
+    <div class="nav_left">
+        <a href="{% url 'index' %}">
+            <img
+                class="nav_logo"
+                src="{% static 'Icons/Layer 3.svg' %}"
+                alt="Credard logo"
+            />
+        </a>
+      <nav class="nav_menu">
+        <ul class="nav_list">
+          <li><a class="nav_link" href="#">Features</a></li>
+          <li><a class="nav_link" href="#">Library</a></li>
+          <li><a class="nav_link" href="{% url 'our-team' %}">The team</a></li>
+          <li><a class="nav_link" href="{% url 'contact-us' %}">Contact us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav_right">
+        {% if request.user.is_authenticated %}
+        <div class="nav_right nav-right_auth">
+          <a href="#" class="nav_login">
+            <img src="{% static 'Icons/Bookmark.svg' %}" alt="bookmark" />
+          </a>
+          <a href="./profile.html" class="nav_register">
+            <img src="{% static 'Icons/profile.svg' %}" alt="profile" />
+          </a>
+        </div>
+        <form action="{% url 'logout' %}" method="POST">
+           {% csrf_token %}
+          <a href="{% url 'logout' %}"><button class="nav_register" type="submit">Logout</button></a>
+        </form>
+        {% else %}
+        <a class="nav_login" href="{% url 'login' %}">Login</a>
+        <a class="nav_register" href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </div>
+    <button id="hamburger-btn" class="nav_btn">
+      <img src="{% static 'homepage/Icons/menu - ham-white.svg' %}" alt="" />
+    </button>
+</header>
+
+<main>
+    <section class="frame">
+        <div class="container">
+            <div class="frame_words">
+                <h2>How can we help you?</h2>
+                <h4>Send us a message</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-area">
+        <div class="container">
+            <div class="contact-area_form">
+                <div class="contact-area_form_name">
+                    <label for="name">Name</label><br>
+                    <input type="text" id="name">
+                </div>
+
+                <div class="contact-area_form_address">
+                    <label for="email">Email Address</label><br>
+                    <input type="email" id="email">
+                </div>
+
+                <div class="contact-area_form_message">
+                    <label for="message">Message</label><br>
+                    <textarea rows="5" id="message"></textarea>
+                </div>
+
+                <button>Send Message</button>
+            </div>
+
+            <div class="contact-area_image">
+                <img src="{% static 'Icons/illustration-woman-contactUs.svg' %}" alt="">
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer_top">
+      <div>
+        <img src="{% static 'homepage/Icons/Group 44.svg' %}" alt="Logo" />
+      </div>
+  
+      <div class="footer_links">
+        <nav>
+          <h3 class="footer_heading">Support</h3>
+          <ul class="footer_list">
+            <li>
+              <a class="footer_link" href="{% url 'contact-us' %}">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <h3 class="footer_heading">Library</h3>
+          <ul class="footer_list">
+            <li>
+              <a class="footer_link" href="#">View Library</a>
+            </li>
+            <li>
+              <a class="footer_link" href="#">Saved Designs</a>
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <h3 class="footer_heading">Company</h3>
+          <ul class="footer_list">
+            <li>
+              <a class="footer_link" href="{% url 'our-team' %}">Meet the Team</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <hr class="footer_hr" />
+    <div class="footer_bottom">
+      <p class="footer_copyright">© Credard Inc. 2022</p>
+      <div class="social">
+        <p>Follow us:</p>
+        <nav>
+          <ul class="social_link">
+            <li>
+              <a href="#" title="Twitter"
+                ><img src="{% static 'homepage/Icons/Twitter.svg' %}" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#" title="Facebook"
+                ><img src="{% static 'homepage/Icons/Facebook.svg' %}" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#" title="LinkedIn"
+                ><img
+                  src="{% static 'homepage/Icons/Linked in.svg' %}"
+                  alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#" title="Instagram"
+                ><img
+                  src="{% static 'homepage/Icons/Instagram.svg' %}"
+                  alt=""
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+</footer>
+{% endblock content %}
