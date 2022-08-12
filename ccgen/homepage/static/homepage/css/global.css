@@ -1,4 +1,4 @@
-@import url("./base.css");
+@import url("base.css");
 
 /* General styles */
 * {
@@ -16,15 +16,18 @@ body {
 
 ul {
   list-style: none;
+  cursor: pointer;
 }
 
 button {
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 img {
@@ -36,7 +39,7 @@ img {
 .nav_hamburger-menu {
   flex: 1;
 }
-.nav_btn {
+nav {
   cursor: pointer;
 }
 /* Header navbar */
@@ -67,6 +70,7 @@ img {
 }
 
 .nav_list {
+  padding-top: 0;
   flex: 1;
   min-width: 300px;
 
@@ -89,6 +93,10 @@ img {
   display: none;
   gap: 1em;
 }
+.nav-right_auth {
+  gap: 2em;
+  margin-top: 1px;
+}
 
 .nav_login,
 .nav_register,
@@ -109,7 +117,8 @@ img {
 
 /* Footer */
 .footer {
-  background: url("../images/Group 117.svg") no-repeat;
+  margin-top: 3rem;
+  background: url("../images/Group-117.webp") no-repeat;
   background-size: cover;
   color: var(--light-gray);
 
@@ -219,6 +228,12 @@ img {
   justify-content: center;
   align-items: center;
   gap: 1em;
+}
+.ham_auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .hide {

@@ -1,4 +1,4 @@
-@import url(base.css);
+@import url(global.css);
 @import url(individual.css);
 
 .library-cards__header {
@@ -60,10 +60,10 @@
 }
 
 .saved-design__one {
-  background-image: url(./assets/images/bg-design-1.webp);
+  background-image: url(../images/bg-design-1.webp);
 }
 .saved-design__two {
-  background-image: url(./assets/images/bg-design-4.webp);
+  background-image: url(../images/bg-design-4.webp);
 }
 .saved-design__three {
   background: conic-gradient(
@@ -78,10 +78,10 @@
   );
 }
 .saved-design__four {
-  background-image: url(./assets/images/bg-design-2.webp);
+  background-image: url(../images/bg-design-2.webp);
 }
 .saved-design__five {
-  background-image: url(./assets/images/bg-design-3.webp);
+  background-image: url(../images/bg-design-3.webp);
 }
 .saved-design__six {
   background: radial-gradient(
@@ -91,13 +91,13 @@
   );
 }
 .saved-design__seven {
-  background-image: url(./assets/images/card-design-19.webp);
+  background-image: url(../images/card-design-19.webp);
 }
 .saved-design__eight {
-  background-image: url(./assets/images/card-design-18.webp);
+  background-image: url(../images/card-design-18.webp);
 }
 .saved-design__nine {
-  background-image: url(./assets/images/profile-card-design-5.webp);
+  background-image: url(../images/profile-card-design-5.webp);
 }
 .saved-design__ten {
   background: radial-gradient(
@@ -107,16 +107,16 @@
   );
 }
 .saved-design__eleven {
-  background-image: url(./assets/images/profile-card-design-6.webp);
+  background-image: url(../images/profile-card-design-6.webp);
 }
 .saved-design__twelve {
-  background-image: url(./assets/images/card-design-10.webp);
+  background-image: url(../images/card-design-10.webp);
 }
 .saved-design__thirteen {
-  background-image: url(./assets/images/saved-card-8.webp);
+  background-image: url(../images/saved-card-8.webp);
 }
 .saved-design__fourteen {
-  background-image: url(./assets/images/saved-card-9.webp);
+  background-image: url(../images/saved-card-9.webp);
 }
 .saved-design__fifteen {
   background: linear-gradient(
@@ -129,43 +129,43 @@
   );
 }
 .saved-design__sixteen {
-  background-image: url(./assets/images/saved-card-2.webp);
+  background-image: url(../images/saved-card-2.webp);
 }
 .saved-design__seventeen {
-  background-image: url(./assets/images/saved-card-3.webp);
+  background-image: url(../images/saved-card-3.webp);
 }
 .saved-design__eighteen {
-  background-image: url(./assets/images/profile-card-design-1.webp);
+  background-image: url(../images/profile-card-design-1.webp);
 }
 .saved-design__nineteen {
-  background-image: url(./assets/images/profile-card-design-3.webp);
+  background-image: url(../images/profile-card-design-3.webp);
 }
 .saved-design__twenty {
-  background-image: url(./assets/images/profile-card-design-4.webp);
+  background-image: url(../images/profile-card-design-4.webp);
 }
 .saved-design__twenty-one {
-  background-image: url(./assets/images/saved-card-6.webp);
+  background-image: url(../images/saved-card-6.webp);
 }
 .saved-design__twenty-two {
-  background-image: url(./assets/images/card-design-17.webp);
+  background-image: url(../images/card-design-17.webp);
 }
 .saved-design__twenty-three {
-  background-image: url(./assets/images/saved-card-5.webp);
+  background-image: url(../images/saved-card-5.webp);
 }
 .saved-design__twenty-four {
-  background-image: url(./assets/images/card-design-15.webp);
+  background-image: url(../images/card-design-15.webp);
 }
 .saved-design__twenty-five {
-  background-image: url(./assets/images/card-design-11.webp);
+  background-image: url(../images/card-design-11.webp);
 }
 .saved-design__twenty-six {
-  background-image: url(./assets/images/card-design-13.webp);
+  background-image: url(../images/card-design-13.webp);
 }
 .saved-design__twenty-seven {
-  background-image: url(./assets/images/card-design-14.webp);
+  background-image: url(../images/card-design-14.webp);
 }
 .saved-design__twenty-eight {
-  background-image: url(./assets/images/card-design-12.webp);
+  background-image: url(../images/card-design-12.webp);
 }
 .saved-design__twenty-nine {
   background: linear-gradient(

@@ -11,11 +11,13 @@
       <div class="nav_left">
         <a href="{% url 'index' %}">
           <img
+            href="{% url 'index' %}"
             class="nav_logo"
             src="{% static 'Icons/Layer 3.svg' %}"
             alt="Credard logo"
           />
         </a>
+
         <nav class="nav_menu">
           <ul class="nav_list">
             <li>
@@ -27,18 +29,43 @@
           </ul>
         </nav>
       </div>
+      {% if request.user.is_authenticated %}
+      <div class="nav_right">
+        <a href="{% url 'saved-designs' %}" class="nav_link">
+          <img src="{% static 'Icons/Bookmark.svg' %}" alt="bookmark" />
+        </a>
+        <a href="{% url 'profile' %}" class="nav_link">
+          <img src="{% static 'Icons/profile.svg' %}" alt="profile" />
+        </a>
+      </div>
+      {% else %}
       <div class="nav_right">
         <a class="nav_login" href="{% url 'login' %}">Login</a>
         <a class="nav_register" href="{% url 'register' %}">Register</a>
       </div>
+      {% endif %}
       <button id="hamburger-btn" class="nav_btn">
-        <img src="{% static 'Icons/menu - ham.svg' %}" alt="" />
+        <img src="Icons/menu - ham.svg" alt="" />
       </button>
     </div>
     <div class="nav_hamburger-menu">
       <nav id="hamburger-menu" class="ham_menu hide">
+        {% if request.user.is_authenticated %}
         <ul>
-          <li><a class="ham_link" href="#">Features</a></li>
+          <li><a class="ham_link" href="{% url 'how-it-works' %}">How it works</a></li>
+          <li><a class="ham_link" href="{% url 'library' %}">Library</a></li>
+          <li>
+            <a class="ham_link" href="{% url 'our-team' %}">The team</a>
+          </li>
+          <li><a class="ham_link" href="{% url 'contact-us' %}">Contact us</a></li>
+        </ul>
+        <div class="ham_auth">
+          <a href="{% url 'saved-designs' %}" class="ham_link"> Saved Designs </a>
+          <a href="{% url 'profile' %}" class="ham_link"> Profile </a>
+        </div>
+        {% else %}
+        <ul>
+          <li><a class="ham_link" href="{% url 'how-it-works' %}">Features</a></li>
           <li><a class="ham_link" href="{% url 'library' %}">Library</a></li>
           <li>
             <a class="ham_link" href="{% url 'our-team' %}">The team</a>
@@ -49,6 +76,7 @@
           <a class="ham_login" href="{% url 'login' %}">Login</a>
           <a class="ham_register" href="{% url 'register' %}">Register</a>
         </div>
+        {% endif %}
       </nav>
     </div>
     <main class="library-cards">
@@ -62,7 +90,7 @@
       </header>
       <section class="related-cards">
         <div class="saved-design__collections">
-          <a href="./individual.html">
+          <a href="{% url 'individual-card' %}">
             <div class="single-card-design">
               <div class="single-card-design__individual saved-design__one">
                 <div class="hover-container">
@@ -1736,9 +1764,6 @@
               </div>
             </div>
           </a>
-          <img src="{% static 'images/widget.svg' %}" alt="widget-1" />
-          <img src="{% static 'images/widget-3.svg' %}" alt="widget-1" />
-          <img src="{% static 'images/widget-2.svg' %}" alt="widget-1" />
         </div>
         <div class="batch-two">
           <div class="saved-design__collections">
@@ -2200,12 +2225,11 @@
     <footer class="footer">
       <div class="footer_top">
         <div>
-          <a href="{% url 'index' %}">
-            <img
-              src="{% static 'Icons/Group 44.svg' %}"
-              alt="Logo"
-            />
-          </a>
+          <img
+            href="{% url 'index' %}"
+            src="{% static 'Icons/Group 44.svg' %}"
+            alt="Logo"
+          />
         </div>
 
         <div class="footer_links">
@@ -2224,9 +2248,11 @@
                 <a class="footer_link" href="{% url 'library' %}">View Library</a>
               </li>
               <li>
-                <a class="footer_link" href="./saved-designs.html"
-                  >Saved Designs</a
-                >
+                {% if request.user.is_authenticated %}
+                <a class="footer_link" href="{% url 'saved-designs' %}">Saved Designs</a>
+                {% else %}
+                <a class="footer_link" href="{% url 'login' %}">Saved Designs</a>
+                {% endif %}
               </li>
             </ul>
           </nav>

@@ -1,4 +1,4 @@
-@import "base.css";
+@import url("global.css");
 
 :root {
   --font-primary: "Manrope", sans-serif;
